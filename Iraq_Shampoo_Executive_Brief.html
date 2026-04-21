@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iraq Shampoo — Executive Brief | Dabur</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 landscape;margin:12mm}}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#1a1a2e;font-size:13px;line-height:1.5}
+.page{max-width:1320px;margin:0 auto;padding:20px}
+
+/* ─── Header ─── */
+.hdr{background:linear-gradient(135deg,#003d6b 0%,#0070c0 100%);color:#fff;padding:28px 36px;border-radius:10px 10px 0 0;display:flex;justify-content:space-between;align-items:center}
+.hdr h1{font-size:22px;font-weight:700;letter-spacing:-0.3px}
+.hdr .sub{font-size:12px;opacity:0.8;margin-top:4px}
+.hdr .badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.hdr .badge span{display:block;font-size:9px;opacity:0.7;font-weight:400;margin-top:2px}
+
+/* ─── Body ─── */
+.body{background:#fff;padding:28px 36px 36px;border-radius:0 0 10px 10px;box-shadow:0 8px 40px rgba(0,0,0,0.08)}
+
+/* ─── Section Headers ─── */
+.sh{font-size:15px;font-weight:700;color:#003d6b;margin:28px 0 14px;padding-bottom:6px;border-bottom:2px solid #e8edf2;display:flex;align-items:center;gap:8px}
+.sh:first-child{margin-top:0}
+.sh .num{background:#0070c0;color:#fff;width:24px;height:24px;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+
+/* ─── KPI Row ─── */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:#f8fafc;border:1px solid #e8edf2;border-radius:8px;padding:14px 16px;text-align:center;position:relative}
+.kpi.accent{border-left:4px solid #0070c0}
+.kpi.green{border-left:4px solid #2e7d32}
+.kpi.amber{border-left:4px solid #f39c12}
+.kpi.red{border-left:4px solid #c0392b}
+.kpi .l{font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#6b7b8d;font-weight:600;margin-bottom:4px}
+.kpi .v{font-size:20px;font-weight:700;color:#1a1a2e}
+.kpi .s{font-size:10px;color:#8899a6;margin-top:2px}
+
+/* ─── Tables ─── */
+.tbl{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:16px}
+.tbl th{background:#f1f5f9;color:#475569;font-size:10px;text-transform:uppercase;letter-spacing:0.3px;padding:8px 10px;text-align:left;font-weight:700;border-bottom:2px solid #e2e8f0;white-space:nowrap}
+.tbl td{padding:7px 10px;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+.tbl tr:hover{background:#f8fafc}
+.tbl .vt{background:#e8f5e9!important;font-weight:600}
+.tbl .vt td{border-bottom-color:#c8e6c9}
+.tbl .total{background:#f1f5f9;font-weight:700}
+
+/* ─── Badges ─── */
+.ob{display:inline-block;padding:2px 7px;font-size:10px;border-radius:3px;color:#fff;font-weight:600}
+.ob.mnc{background:#1f4e79}.ob.turkish{background:#c0392b}.ob.iraqi{background:#607d8b}
+.ob.lebanese{background:#16a085}.ob.indian{background:#2e7d32}.ob.saudi{background:#d35400}
+.ob.chinese{background:#f39c12}.ob.iranian{background:#8e44ad}.ob.other{background:#95a5a6}
+
+/* ─── Grid layouts ─── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+
+/* ─── Callout boxes ─── */
+.callout{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:14px 18px;margin:16px 0;font-size:12px;line-height:1.6}
+.callout.blue{background:#eff6ff;border-color:#bfdbfe}
+.callout.green{background:#f0fdf4;border-color:#bbf7d0}
+.callout.red{background:#fef2f2;border-color:#fecaca}
+.callout strong{color:#1a1a2e}
+.callout .tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700;margin-right:4px}
+.callout .tag.opp{background:#dcfce7;color:#166534}
+.callout .tag.risk{background:#fee2e2;color:#991b1b}
+.callout .tag.action{background:#dbeafe;color:#1e40af}
+
+/* ─── Recommendation cards ─── */
+.rec{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.rec-card{border:1px solid #e2e8f0;border-radius:8px;padding:16px;background:#fff;border-top:3px solid #0070c0}
+.rec-card h4{font-size:13px;color:#003d6b;margin-bottom:6px}
+.rec-card p{font-size:11px;color:#475569;line-height:1.5}
+.rec-card .impact{margin-top:8px;font-size:10px;font-weight:700;color:#0070c0;text-transform:uppercase;letter-spacing:0.3px}
+
+/* ─── Tier bars ─── */
+.tier-bar{display:flex;height:28px;border-radius:6px;overflow:hidden;margin:8px 0 4px;font-size:10px;font-weight:600;color:#fff}
+.tier-bar div{display:flex;align-items:center;justify-content:center;min-width:30px}
+
+/* ─── Footer ─── */
+.ftr{text-align:center;padding:16px;font-size:10px;color:#8899a6;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="hdr">
+  <div>
+    <h1>Iraq Shampoo Market — Executive Brief</h1>
+    <div class="sub">RetailZoom Retail Audit Dipstick &bull; February 2026 &bull; Confidential</div>
+  </div>
+  <div class="badge">C-Suite<span>CEO &bull; COO &bull; CMO</span></div>
+</div>
+
+<div class="body">
+
+<!-- ═══════════ 1. MARKET AT A GLANCE ═══════════ -->
+<div class="sh"><span class="num">1</span> Market at a Glance</div>
+
+<div class="kpi-row">
+  <div class="kpi accent"><div class="l">Market Volume</div><div class="v">4,718 K LTs</div><div class="s">Monthly &bull; 56,612 K LTs annualised</div></div>
+  <div class="kpi accent"><div class="l">Market Value</div><div class="v">35.8 Bn IQD</div><div class="s">Monthly &bull; 429.9 Bn IQD annualised</div></div>
+  <div class="kpi accent"><div class="l">Market Value (AED)</div><div class="v">89.6 Mn AED</div><div class="s">Monthly &bull; 1,075 Mn AED annualised</div></div>
+  <div class="kpi"><div class="l">Avg PPV</div><div class="v">7,378 IQD/L</div><div class="s">18.45 AED/L</div></div>
+  <div class="kpi"><div class="l"># Brands</div><div class="v">80+</div><div class="s">across 5 price tiers</div></div>
+</div>
+
+<div class="callout blue">
+  <strong>Market context:</strong> Iraq Shampoo is a <strong>430 Bn IQD</strong> annualised market dominated by MNCs (69% value share). The market is structurally split — MNCs own the premium segment while Turkish and Iraqi players control the value end. Distribution remains the primary competitive lever, with top brands achieving 50%+ weighted distribution.
+</div>
+
+<!-- ═══════════ 2. DABUR / VATIKA POSITION ═══════════ -->
+<div class="sh"><span class="num">2</span> Dabur Position — Vatika</div>
+
+<div class="kpi-row">
+  <div class="kpi green"><div class="l">Vatika Vol Share</div><div class="v">1.10%</div><div class="s">52.3 K LTs monthly</div></div>
+  <div class="kpi green"><div class="l">Vatika Val Share</div><div class="v">1.27%</div><div class="s">461 Mn IQD monthly</div></div>
+  <div class="kpi green"><div class="l">Vatika PPV</div><div class="v">8,810 IQD/L</div><div class="s">22.03 AED — Mainstream tier</div></div>
+  <div class="kpi amber"><div class="l">Weighted Dist.</div><div class="v">9.8</div><div class="s">vs 53.1 HEAD&amp;SHOULDERS</div></div>
+  <div class="kpi amber"><div class="l">Numeric Dist.</div><div class="v">1.6</div><div class="s">vs 26.7 HEAD&amp;SHOULDERS</div></div>
+  <div class="kpi"><div class="l">Annualised Value</div><div class="v">5,532 Mn IQD</div><div class="s">628 K LTs annualised vol</div></div>
+</div>
+
+<div class="callout">
+  <span class="tag opp">OPPORTUNITY</span> Vatika's <strong>distribution efficiency is 13.0</strong> (Val% ÷ WD) — comparable to GARNIER (15.8) and ahead of COSMAL CURE (11.8). This means every point of distribution Vatika gains delivers outsized returns. The <strong>primary growth constraint is distribution reach, not brand pull</strong>.
+</div>
+
+<!-- ═══════════ 3. COMPETITIVE LANDSCAPE ═══════════ -->
+<div class="sh"><span class="num">3</span> Competitive Landscape — Top 10 Brands</div>
+
+<table class="tbl">
+<thead><tr><th>#</th><th>Brand</th><th>Origin</th><th>Vol%</th><th>Val%</th><th>PPV (IQD)</th><th>WD</th><th>ND</th><th>Positioning</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>HEAD&amp;SHOULDERS</strong></td><td><span class="ob mnc">MNC</span></td><td>11.0%</td><td>17.0%</td><td>11,759</td><td>53.1</td><td>26.7</td><td>Premium Leader</td></tr>
+<tr><td>2</td><td>IPEK</td><td><span class="ob turkish">Turkish</span></td><td>9.2%</td><td>4.7%</td><td>3,882</td><td>18.2</td><td>12.4</td><td>Value volume driver</td></tr>
+<tr><td>3</td><td>HAIR</td><td><span class="ob iraqi">Iraqi</span></td><td>7.4%</td><td>2.7%</td><td>2,795</td><td>10.1</td><td>7.9</td><td>Local economy brand</td></tr>
+<tr><td>4</td><td>COSMAL CURE</td><td><span class="ob lebanese">Lebanese</span></td><td>5.8%</td><td>4.0%</td><td>5,225</td><td>33.7</td><td>8.8</td><td>Mass market leader</td></tr>
+<tr><td>5</td><td>GARNIER</td><td><span class="ob mnc">MNC</span></td><td>4.8%</td><td>6.2%</td><td>9,716</td><td>39.3</td><td>14.0</td><td>Mainstream premium</td></tr>
+<tr><td>6</td><td>LIFEBUOY</td><td><span class="ob mnc">MNC</span></td><td>4.6%</td><td>4.8%</td><td>7,864</td><td>18.8</td><td>4.8</td><td>Mass hygiene play</td></tr>
+<tr><td>7</td><td>TRESEMME</td><td><span class="ob mnc">MNC</span></td><td>4.0%</td><td>3.7%</td><td>7,075</td><td>42.6</td><td>12.3</td><td>Mainstream salon brand</td></tr>
+<tr><td>8</td><td>PANTENE</td><td><span class="ob mnc">MNC</span></td><td>3.8%</td><td>5.3%</td><td>10,551</td><td>37.0</td><td>12.1</td><td>Premium care</td></tr>
+<tr><td>9</td><td>SOFT WAVE</td><td><span class="ob lebanese">Lebanese</span></td><td>3.8%</td><td>3.7%</td><td>7,329</td><td>48.4</td><td>14.1</td><td>Mass distribution champ</td></tr>
+<tr><td>10</td><td>CLEAR</td><td><span class="ob mnc">MNC</span></td><td>3.8%</td><td>4.8%</td><td>9,784</td><td>25.2</td><td>7.3</td><td>Anti-dandruff niche</td></tr>
+<tr class="vt"><td>—</td><td><strong>VATIKA</strong></td><td><span class="ob indian">Indian</span></td><td>1.1%</td><td>1.3%</td><td>8,810</td><td>9.8</td><td>1.6</td><td>Naturals mainstream</td></tr>
+</tbody>
+</table>
+
+<!-- ═══════════ 4. PRICING TIERS ═══════════ -->
+<div class="sh"><span class="num">4</span> Pricing Tier Structure</div>
+
+<div class="g2">
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">VOLUME SHARE BY TIER</p>
+<div class="tier-bar">
+  <div style="width:31.3%;background:#95a5a6" title="Value 31.3%">Value 31%</div>
+  <div style="width:21.7%;background:#3498db" title="Economy 21.7%">Eco 22%</div>
+  <div style="width:23.8%;background:#2ecc71" title="Mainstream 23.8%">Main 24%</div>
+  <div style="width:19.9%;background:#f39c12" title="Premium 19.9%">Prem 20%</div>
+  <div style="width:3.5%;background:#c0392b" title="Super-Premium 3.5%">3%</div>
+</div>
+<p style="font-size:11px;color:#6b7b8d;margin:12px 0 6px;font-weight:600">VALUE SHARE BY TIER</p>
+<div class="tier-bar">
+  <div style="width:13.6%;background:#95a5a6" title="Value 13.6%">14%</div>
+  <div style="width:17.3%;background:#3498db" title="Economy 17.3%">17%</div>
+  <div style="width:28.1%;background:#2ecc71" title="Mainstream 28.1%">Mainstream 28%</div>
+  <div style="width:31.8%;background:#f39c12" title="Premium 31.8%">Premium 32%</div>
+  <div style="width:9.2%;background:#c0392b" title="Super-Premium 9.2%">9%</div>
+</div>
+</div>
+<div>
+<table class="tbl">
+<thead><tr><th>Tier</th><th>PPV Range</th><th>Vol%</th><th>Val%</th><th>Dabur Share</th></tr></thead>
+<tbody>
+<tr><td style="color:#95a5a6;font-weight:700">● Value</td><td>&lt;4,000</td><td>31.3%</td><td>13.6%</td><td>0.0%</td></tr>
+<tr><td style="color:#3498db;font-weight:700">● Economy</td><td>4,000–7,500</td><td>21.7%</td><td>17.3%</td><td>0.4%</td></tr>
+<tr style="background:#f0fdf4"><td style="color:#2ecc71;font-weight:700">● Mainstream</td><td>7,500–11,000</td><td>23.8%</td><td>28.1%</td><td><strong>4.3%</strong></td></tr>
+<tr><td style="color:#f39c12;font-weight:700">● Premium</td><td>11,000–15,000</td><td>19.9%</td><td>31.8%</td><td>0.0%</td></tr>
+<tr><td style="color:#c0392b;font-weight:700">● Super-Premium</td><td>15,000+</td><td>3.5%</td><td>9.2%</td><td>0.0%</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="callout">
+  <span class="tag risk">GAP</span> Vatika plays exclusively in <strong>Mainstream</strong> (4.3% tier share). The <strong>Premium tier holds 32% of market value</strong> (≈137 Bn IQD annualised) with ZERO Dabur presence. The Value tier (31% volume) is also unaddressed — a potential entry point for a Vatika economy line.
+</div>
+
+<!-- ═══════════ 5. ORIGIN MIX ═══════════ -->
+<div class="sh"><span class="num">5</span> Origin Mix — Who Owns the Market</div>
+
+<div class="g2">
+<div>
+<table class="tbl">
+<thead><tr><th>Origin</th><th>Vol%</th><th>Val%</th><th># Brands</th><th>Top Brand</th></tr></thead>
+<tbody>
+<tr><td><span class="ob mnc">MNC</span></td><td>49.9%</td><td>69.4%</td><td>11</td><td>HEAD&amp;SHOULDERS</td></tr>
+<tr><td><span class="ob iraqi">Iraqi</span></td><td>16.6%</td><td>7.2%</td><td>5</td><td>HAIR</td></tr>
+<tr><td><span class="ob turkish">Turkish</span></td><td>15.7%</td><td>8.0%</td><td>2</td><td>IPEK</td></tr>
+<tr><td><span class="ob lebanese">Lebanese</span></td><td>11.5%</td><td>9.5%</td><td>2</td><td>COSMAL CURE</td></tr>
+<tr><td><span class="ob saudi">Saudi/Gulf</span></td><td>3.1%</td><td>2.7%</td><td>1</td><td>NUNU</td></tr>
+<tr class="vt"><td><span class="ob indian">Indian</span></td><td>1.3%</td><td>1.6%</td><td>2</td><td>VATIKA</td></tr>
+<tr><td><span class="ob chinese">Chinese</span></td><td>1.1%</td><td>1.3%</td><td>2</td><td>ROSE LIFE</td></tr>
+<tr><td><span class="ob iranian">Iranian</span></td><td>0.7%</td><td>0.3%</td><td>1</td><td>GOLRANG</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="callout blue" style="margin-top:0">
+  <strong>Key insight:</strong> MNCs capture <strong>69% of value from 50% of volume</strong> — a 1.4x value premium driven by premium pricing and distribution dominance. Indian origin brands (Vatika + Amla) hold just <strong>1.6% value share</strong> but punch above their weight on PPV (8,810 IQD/L vs market avg 7,378). The "naturals" positioning commands a price premium — the constraint is distribution width, not price acceptance.
+</div>
+<div class="callout" style="margin-top:8px">
+  <span class="tag opp">OPPORTUNITY</span> Turkish brands (IPEK, DURU) hold <strong>15.7% volume but only 8% value</strong> — highly price-sensitive consumers. Lebanese brands (COSMAL CURE, SOFT WAVE) are distribution-heavy (34–48 WD) but value-diluted. Neither segment competes directly with Vatika's naturals positioning.
+</div>
+</div>
+</div>
+
+<!-- ═══════════ 6. GEOGRAPHY & CHANNELS ═══════════ -->
+<div class="sh"><span class="num">6</span> Geographic & Channel Opportunity Map</div>
+
+<div class="g2">
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">DABUR BY REGION</p>
+<table class="tbl">
+<thead><tr><th>Region</th><th>Mkt Vol KLT</th><th>Dabur Vol%</th><th>Dabur WD</th><th>Gap</th></tr></thead>
+<tbody>
+<tr style="background:#f0fdf4"><td><strong>Baghdad</strong></td><td>1,725</td><td>1.70%</td><td>22.4</td><td style="color:#2e7d32">Stronghold</td></tr>
+<tr><td>North</td><td>776</td><td>1.30%</td><td>19.5</td><td style="color:#2e7d32">Solid</td></tr>
+<tr><td>Furat</td><td>279</td><td>0.92%</td><td>15.0</td><td style="color:#f39c12">Moderate</td></tr>
+<tr><td>South</td><td>1,094</td><td>0.83%</td><td>8.3</td><td style="color:#c0392b"><strong>Under-penetrated</strong></td></tr>
+<tr><td>Kurdistan</td><td>843</td><td>0.16%</td><td>3.6</td><td style="color:#c0392b"><strong>Critical gap</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">DABUR BY CHANNEL</p>
+<table class="tbl">
+<thead><tr><th>Channel</th><th>Mkt Vol KLT</th><th>Dabur Vol%</th><th>Dabur WD</th><th>Gap</th></tr></thead>
+<tbody>
+<tr style="background:#f0fdf4"><td><strong>Perfumery</strong></td><td>2,219</td><td>1.59%</td><td>16.8</td><td style="color:#2e7d32">Core channel</td></tr>
+<tr><td>Modern Trade</td><td>685</td><td>1.56%</td><td>13.6</td><td style="color:#2e7d32">Healthy</td></tr>
+<tr><td>Traditional Trade</td><td>1,738</td><td>0.34%</td><td>1.2</td><td style="color:#c0392b"><strong>Nearly absent</strong></td></tr>
+<tr><td>Pharmacy</td><td>77</td><td>0.48%</td><td>3.3</td><td style="color:#f39c12">Niche</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="callout red">
+  <span class="tag risk">CRITICAL</span> <strong>Traditional Trade</strong> represents <strong>1,738 K LTs (37% of market)</strong> but Vatika has just <strong>1.2 WD</strong> (essentially absent). Closing to even 10 WD here — a fraction of SOFT WAVE's 19 — would open ~600 K LTs of addressable volume. <strong>Kurdistan</strong> (843 K LTs, WD 3.6) is the single largest geographic blind spot.
+</div>
+
+<!-- ═══════════ 7. DISTRIBUTION EFFICIENCY ═══════════ -->
+<div class="sh"><span class="num">7</span> Distribution Efficiency — Vatika vs Peers</div>
+
+<table class="tbl">
+<thead><tr><th>Brand</th><th>Val Share</th><th>WD</th><th>Efficiency (Val%÷WD)</th><th>Read</th></tr></thead>
+<tbody>
+<tr><td>HEAD&amp;SHOULDERS</td><td>17.0%</td><td>53.1</td><td style="font-weight:700;color:#003d6b">32.1</td><td>Under-distributed — still room to grow</td></tr>
+<tr><td>CLEAR</td><td>5.9%</td><td>22.8</td><td style="font-weight:700">26.0</td><td>Strong pull per outlet</td></tr>
+<tr><td>IPEK</td><td>4.7%</td><td>18.2</td><td style="font-weight:700">25.9</td><td>Efficient value brand</td></tr>
+<tr><td>GARNIER</td><td>6.2%</td><td>39.3</td><td style="font-weight:700">15.8</td><td>Balanced</td></tr>
+<tr class="vt"><td><strong>VATIKA</strong></td><td>1.3%</td><td>9.8</td><td style="font-weight:700;color:#2e7d32">13.0</td><td><strong>Strong efficiency — distribution is the bottleneck</strong></td></tr>
+<tr><td>COSMAL CURE</td><td>4.0%</td><td>33.7</td><td>11.8</td><td>Balanced</td></tr>
+<tr><td>TRESEMME</td><td>3.7%</td><td>42.6</td><td>8.7</td><td>Over-distributed</td></tr>
+<tr><td>SOFT WAVE</td><td>3.7%</td><td>48.4</td><td>7.6</td><td>Diminishing returns</td></tr>
+</tbody>
+</table>
+
+<div class="callout green">
+  <span class="tag opp">UPSIDE</span> Vatika's efficiency of <strong>13.0</strong> is top-quartile — every WD point gained yields disproportionate value. If Vatika matched COSMAL CURE's distribution (WD 33.7), at current efficiency, value share would reach <strong>~4.4%</strong> — a <strong>3.5x uplift</strong> from current 1.27%.
+</div>
+
+<!-- ═══════════ 8. PROMOTION ═══════════ -->
+<div class="sh"><span class="num">8</span> Promotion — A Gap to Close</div>
+
+<div class="callout red">
+  <span class="tag risk">ALERT</span> Vatika currently has <strong>ZERO promotional activity</strong> in Iraq. The market leader TRICHUP (Indian) runs 74% of its volume through promotions. Even P&amp;G (HEAD&amp;SHOULDERS, PANTENE) activates tactical promos at 0.5–1.6%. Vatika needs baseline promotional presence to drive trial in new distribution outlets.
+</div>
+
+<!-- ═══════════ 9. STRATEGIC RECOMMENDATIONS ═══════════ -->
+<div class="sh"><span class="num">9</span> Strategic Recommendations</div>
+
+<div class="rec">
+  <div class="rec-card" style="border-top-color:#c0392b">
+    <h4>1. Crack Traditional Trade</h4>
+    <p>Traditional Trade (37% of market) is nearly unserved (WD 1.2). Deploy dedicated GT sales force in Baghdad and South. Target <strong>WD 10</strong> within 12 months. Addressable value: <strong>~2.2 Bn IQD</strong> annually.</p>
+    <div class="impact">Impact: +1.5% value share</div>
+  </div>
+  <div class="rec-card" style="border-top-color:#f39c12">
+    <h4>2. Unlock Kurdistan</h4>
+    <p>Kurdistan (843 K LTs) has Vatika WD of just 3.6 vs 22.4 in Baghdad. Appoint a regional distributor with Perfumery + Modern Trade coverage. This single region could add <strong>~500 Mn IQD</strong> annually.</p>
+    <div class="impact">Impact: +0.4% value share</div>
+  </div>
+  <div class="rec-card" style="border-top-color:#2ecc71">
+    <h4>3. Launch Trial Promotions</h4>
+    <p>Zero promo activity vs 74% by TRICHUP. Introduce shelf-displays + sampling in top 200 Perfumery outlets and 50 Modern Trade stores. Budget: modest — aimed at trial conversion in newly-distributed stores.</p>
+    <div class="impact">Impact: 2–3x velocity uplift in new outlets</div>
+  </div>
+  <div class="rec-card" style="border-top-color:#0070c0">
+    <h4>4. Explore Premium Tier Entry</h4>
+    <p>Premium tier (11–15K IQD PPV) holds <strong>32% of market value</strong> (~137 Bn IQD) with no Dabur presence. A Vatika Premium/Keratin line at 12K IQD PPV could carve 1–2% tier share = <strong>~1.4 Bn IQD</strong>.</p>
+    <div class="impact">Impact: Portfolio diversification + margin uplift</div>
+  </div>
+  <div class="rec-card" style="border-top-color:#8e44ad">
+    <h4>5. Strengthen South Region</h4>
+    <p>South (1,094 K LTs — 23% of market) has Vatika WD of only 8.3 vs 22.4 Baghdad. This is the <strong>second-largest region</strong> with clear headroom. Prioritise distributor expansion alongside Baghdad playbook.</p>
+    <div class="impact">Impact: +0.5% value share from distribution parity</div>
+  </div>
+</div>
+
+<div class="callout green" style="margin-top:20px">
+  <strong>Bottom line:</strong> Vatika's brand pull is strong (efficiency 13.0) and pricing is well-positioned in Mainstream. The <strong>single biggest lever is distribution expansion</strong> — particularly Traditional Trade (nearly absent) and Kurdistan (3.6 WD). Executing recommendations 1–3 alone could take Vatika from <strong>1.3% → 3%+ value share</strong> within 12–18 months, translating to an incremental <strong>~6 Bn IQD</strong> in annual revenue.
+</div>
+
+</div><!-- /body -->
+
+<div class="ftr">
+  Source: RetailZoom Retail Audit Dipstick (Jan26/Feb26) &bull; Iraq Shampoo Market &bull; Confidential — For internal Dabur use only<br>
+  Prepared: 21 April 2026
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
