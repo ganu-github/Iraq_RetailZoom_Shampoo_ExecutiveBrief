@@ -88,6 +88,51 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 .fn-section{margin-top:14px}
 .fn-section h4{font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px}
 
+/* ─── Scenario Modeling ─── */
+.scenario-hdr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.sc-card{border-radius:8px;padding:14px 16px;text-align:center;border:2px solid}
+.sc-card.base{background:#f8fafc;border-color:#94a3b8;color:#475569}
+.sc-card.push{background:#eff6ff;border-color:#3b82f6;color:#1e40af}
+.sc-card.full{background:#f0fdf4;border-color:#22c55e;color:#166534}
+.sc-card h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.sc-card .sv{font-size:22px;font-weight:800;margin:4px 0}
+.sc-card .sd{font-size:10px;opacity:0.8;line-height:1.4}
+.sc-tbl{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:14px}
+.sc-tbl th{padding:7px 8px;text-align:left;font-weight:700;border-bottom:2px solid;white-space:nowrap;font-size:10px;text-transform:uppercase;letter-spacing:0.3px}
+.sc-tbl td{padding:6px 8px;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+.sc-tbl .current{background:#f8fafc}
+.sc-tbl .s1{background:#f1f5f9}
+.sc-tbl .s2{background:#eff6ff}
+.sc-tbl .s3{background:#f0fdf4}
+.sc-tbl .delta{color:#16a34a;font-weight:700;font-size:10px}
+.sc-tbl .gap{color:#dc2626;font-weight:600;font-size:10px}
+.bar-wrap{background:#e2e8f0;border-radius:4px;height:18px;position:relative;overflow:hidden;margin:2px 0}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 6px;font-size:9px;font-weight:700;color:#fff;min-width:2px}
+.bar-fill.cur{background:#94a3b8}
+.bar-fill.s1{background:#64748b}
+.bar-fill.s2{background:#3b82f6}
+.bar-fill.s3{background:#22c55e}
+.comp-bar{background:#e2e8f0;border-radius:3px;height:12px;position:relative;margin:1px 0}
+.comp-fill{height:100%;border-radius:3px}
+.waterfall{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin:12px 0}
+.wf-item{text-align:center;position:relative}
+.wf-bar{margin:0 auto;width:50px;border-radius:4px 4px 0 0;display:flex;align-items:flex-end;justify-content:center;color:#fff;font-size:10px;font-weight:700;padding-bottom:4px}
+.wf-label{font-size:9px;color:#64748b;margin-top:4px;font-weight:600}
+.wf-val{font-size:11px;font-weight:700;color:#1a1a2e;margin-top:2px}
+
+/* ─── Market Visit Section ─── */
+.mv-badge{display:inline-block;background:#e74c3c;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:0.5px;margin-left:8px;vertical-align:middle}
+.sit-tbl{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:16px}
+.sit-tbl th{background:#fff3cd;color:#856404;font-size:10px;text-transform:uppercase;letter-spacing:0.3px;padding:8px 10px;text-align:left;font-weight:700;border-bottom:2px solid #ffc107}
+.sit-tbl td{padding:8px 10px;border-bottom:1px solid #f1f5f9;vertical-align:top;line-height:1.5}
+.sit-tbl tr:hover{background:#fffbeb}
+.price-idx{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:14px}
+.price-idx th{background:#e8f5e9;color:#2e7d32;font-size:10px;padding:7px 8px;text-align:left;font-weight:700;border-bottom:2px solid #4caf50;white-space:nowrap}
+.price-idx td{padding:6px 8px;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+.price-idx .hi{color:#c0392b;font-weight:700}
+.price-idx .lo{color:#2e7d32;font-weight:700}
+.idx-cell{font-weight:700;text-align:center}
+
 /* ─── Footer ─── */
 .ftr{text-align:center;padding:16px;font-size:10px;color:#8899a6;margin-top:12px}
 </style>
@@ -99,7 +144,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 <div class="hdr">
   <div>
     <h1>Iraq Shampoo Market — Executive Brief</h1>
-    <div class="sub">RetailZoom Retail Audit Dipstick &bull; February 2026 &bull; Confidential</div>
+    <div class="sub">RetailZoom Retail Audit Dipstick (Feb 2026) + Market Visit Debrief (Nov 2025) &bull; Confidential</div>
   </div>
   <div class="badge">C-Suite<span>CEO &bull; COO &bull; CMO</span></div>
 </div>
@@ -117,8 +162,15 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
   <div class="kpi"><div class="l"># Brands</div><div class="v">80+</div><div class="s">across 5 price tiers</div></div>
 </div>
 
+<div class="kpi-row">
+  <div class="kpi"><div class="l">Population</div><div class="v">45 M</div><div class="s">Median age 20.5 &bull; 70% urban</div></div>
+  <div class="kpi"><div class="l">GDP Per Capita</div><div class="v">$6,300</div><div class="s">Nominal GDP $297.7 B</div></div>
+  <div class="kpi"><div class="l">Inflation</div><div class="v">6.6%</div><div class="s">GDP growth +3.7%</div></div>
+  <div class="kpi"><div class="l">Avg Family Size</div><div class="v">6.3</div><div class="s">Young, growing consumer base</div></div>
+</div>
+
 <div class="callout blue">
-  <strong>Market context:</strong> Iraq Shampoo is a <strong>430 Bn IQD</strong> annualised market dominated by MNCs (69% value share). The market is structurally split — MNCs own the premium segment while Turkish and Iraqi players control the value end. Distribution remains the primary competitive lever, with top brands achieving 50%+ weighted distribution.
+  <strong>Market context:</strong> Iraq Shampoo is a <strong>430 Bn IQD</strong> annualised market dominated by MNCs (69% value share). The market is structurally split — MNCs own the premium segment while Turkish and Iraqi players control the value end. Distribution remains the primary competitive lever, with top brands achieving 50%+ weighted distribution. <em style="color:#6b7b8d;font-size:11px">(Source: RetailZoom Feb 2026 + Market Visit Nov 2025)</em>
 </div>
 
 <!-- ═══════════ 2. DABUR / VATIKA POSITION ═══════════ -->
@@ -135,6 +187,41 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 
 <div class="callout">
   <span class="tag opp">OPPORTUNITY</span> Vatika's <strong>distribution efficiency is 13.0</strong> (Val% ÷ WD) — comparable to GARNIER (15.8) and ahead of COSMAL CURE (11.8). This means every point of distribution Vatika gains delivers outsized returns. The <strong>primary growth constraint is distribution reach, not brand pull</strong>.
+</div>
+
+<div class="g2">
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">TRADE CONSTRUCT — SHAMPOO <em style="font-weight:400;color:#94a3b8">(Market Visit)</em></p>
+<table class="tbl">
+<thead><tr><th>Brand</th><th>WS + SubD</th><th>Rest</th></tr></thead>
+<tbody>
+<tr><td><strong>Category Average</strong></td><td><strong>70%</strong></td><td><strong>30%</strong></td></tr>
+<tr><td>H&amp;S (P&amp;G)</td><td>70%</td><td>30%</td></tr>
+<tr><td>Garnier (L'Oréal)</td><td>70%</td><td>30%</td></tr>
+<tr class="vt"><td><strong>Vatika (Dabur)</strong></td><td><strong>57%</strong></td><td><strong>43%</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">DABUR DISTRIBUTOR NETWORK <em style="font-weight:400;color:#94a3b8">(Market Visit)</em></p>
+<table class="tbl">
+<thead><tr><th>Distributor</th><th>Key Acc</th><th>Cash Vans</th><th>WS+SubD</th></tr></thead>
+<tbody>
+<tr><td><strong>Al Maha</strong></td><td>368</td><td>3,880</td><td>145</td></tr>
+<tr><td>Al Mouyasser</td><td>223</td><td>1,925</td><td>198</td></tr>
+<tr><td>Al Awsat</td><td>93</td><td>457</td><td>136</td></tr>
+<tr class="total"><td><strong>Dabur Total</strong></td><td><strong>684</strong></td><td><strong>6,262</strong></td><td><strong>479</strong></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="callout" style="margin-top:4px">
+  <span class="tag risk">GAP</span> Vatika WS contribution at <strong>57% vs category 70%</strong> indicates weak wholesale pull. Benchmark: Khairat (Unilever) operates <strong>725 Key Acc, 5,700 Cash Vans, 730 WS+SubD</strong> — Dabur's total is less than one Unilever distributor. Al Maha (11 DCs) is the backbone; Al Mouyasser &amp; Al Awsat (3 DCs combined) need strengthening. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
+</div>
+
+<div class="callout blue" style="margin-top:8px">
+  <span class="tag action">BUSINESS CONTEXT</span> Iraq primary sales FY25 LE at <strong>41.0 Mn AED</strong> (+8% TY, +25% PY). P3Y CAGR 13%. Vatika Shampoo is the <strong>biggest segment</strong> (31% of Iraq revenue) but <strong>YTD declining -8.6%</strong> (delta -4,750 K AED). The 400ml pack is struggling and competition is aggressive. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
 </div>
 
 <!-- ═══════════ 3. COMPETITIVE LANDSCAPE ═══════════ -->
@@ -156,6 +243,10 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 <tr class="vt"><td>—</td><td><strong>VATIKA</strong></td><td><span class="ob indian">Indian</span></td><td>1.1%</td><td>1.3%</td><td>8,810</td><td>9.8</td><td>1.6</td><td>Naturals mainstream</td></tr>
 </tbody>
 </table>
+
+<div class="callout red">
+  <span class="tag risk">SHELF REALITY</span> Category is <strong>hugely cluttered</strong> — all major MNCs + Turkish &amp; Lebanese brands fight for shelf space. <strong>L'Oréal is most dominant on shelf</strong> with full branded bays (Garnier, Elvive). P&amp;G has strong share-of-shelf with lit displays (H&amp;S, Pantene). <strong>Full block shelf rentals are the norm</strong> in top KA stores — it's a "lock in store" approach since KA has not evolved to category management. Vatika has <strong>no branded bays, no in-store media, no promotional displays</strong>. Competition invests in branded fixtures, FSUs, gondola end-caps, and tower displays year-round. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
+</div>
 
 <!-- ═══════════ 4. PRICING TIERS ═══════════ -->
 <div class="sh"><span class="num">4</span> Pricing Tier Structure</div>
@@ -197,6 +288,40 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
   <span class="tag risk">GAP</span> Vatika plays exclusively in <strong>Mainstream</strong> (4.3% tier share). The <strong>Premium tier holds 32% of market value</strong> (≈137 Bn IQD annualised) with ZERO Dabur presence. The Value tier (31% volume) is also unaddressed — a potential entry point for a Vatika economy line.
 </div>
 
+<div class="g2">
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">FIELD PRICING — KA BASE SHAMPOO (400ml) <em style="font-weight:400;color:#94a3b8">(Market Visit)</em></p>
+<table class="price-idx">
+<thead><tr><th>Brand</th><th>Source</th><th>IQD</th><th>USD</th><th>IQD/ml</th><th>Index</th></tr></thead>
+<tbody>
+<tr><td><strong>Vatika</strong></td><td>UAE</td><td>3,250</td><td>2.17</td><td>8.13</td><td class="idx-cell">100</td></tr>
+<tr><td>Pantene</td><td>KSA</td><td>3,750</td><td>2.50</td><td>9.38</td><td class="idx-cell hi">115</td></tr>
+<tr><td>Pert</td><td>KSA</td><td>3,250</td><td>2.17</td><td>8.13</td><td class="idx-cell">100</td></tr>
+<tr><td>Elvive</td><td>Egypt</td><td>5,000</td><td>3.33</td><td>12.50</td><td class="idx-cell hi">154</td></tr>
+<tr><td>Garnier UD</td><td>Egypt</td><td>4,500</td><td>3.00</td><td>11.25</td><td class="idx-cell hi">138</td></tr>
+<tr><td>Sun Silk</td><td>Egypt</td><td>3,000</td><td>2.00</td><td>8.57</td><td class="idx-cell">105</td></tr>
+<tr><td>Hobby</td><td>Turkey</td><td>3,000<span style="font-size:9px;color:#94a3b8"> (1L)</span></td><td>2.00</td><td>3.00</td><td class="idx-cell lo">45</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">FIELD PRICING — AD SEGMENT (400ml) <em style="font-weight:400;color:#94a3b8">(Market Visit)</em></p>
+<table class="price-idx">
+<thead><tr><th>Brand</th><th>Source</th><th>IQD</th><th>USD</th><th>IQD/ml</th><th>Index</th></tr></thead>
+<tbody>
+<tr><td><strong>Vatika AD</strong></td><td>UAE</td><td>4,750</td><td>3.17</td><td>11.88</td><td class="idx-cell">100</td></tr>
+<tr><td>H&amp;S</td><td>KSA</td><td>4,000</td><td>2.67</td><td>10.00</td><td class="idx-cell lo">84</td></tr>
+<tr><td>H&amp;S 600ml</td><td>KSA</td><td>6,750</td><td>4.50</td><td>11.25</td><td class="idx-cell">95</td></tr>
+<tr><td>H&amp;S 1L</td><td>KSA</td><td>10,500</td><td>7.00</td><td>10.50</td><td class="idx-cell lo">88</td></tr>
+<tr><td>Clear</td><td>Egypt</td><td>3,250</td><td>2.17</td><td>9.29</td><td class="idx-cell lo">78</td></tr>
+</tbody>
+</table>
+<div class="callout red" style="margin-top:8px">
+  <span class="tag risk">PRICING ALERT</span> Vatika AD at IQD 4,750 is <strong>19% above H&amp;S</strong> and <strong>46% above Clear</strong>. Immediate correction needed — else AD won't move. Base range at 87% vs Pantene is competitive but WS margin gap (31% KA→WS drop vs H&amp;S 15%) needs review. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
+</div>
+</div>
+</div>
+
 <!-- ═══════════ 5. ORIGIN MIX ═══════════ -->
 <div class="sh"><span class="num">5</span> Origin Mix — Who Owns the Market</div>
 
@@ -221,7 +346,10 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
   <strong>Key insight:</strong> MNCs capture <strong>69% of value from 50% of volume</strong> — a 1.4x value premium driven by premium pricing and distribution dominance. Indian origin brands (Vatika + Amla) hold just <strong>1.6% value share</strong> but punch above their weight on PPV (8,810 IQD/L vs market avg 7,378). The "naturals" positioning commands a price premium — the constraint is distribution width, not price acceptance.
 </div>
 <div class="callout" style="margin-top:8px">
-  <span class="tag opp">OPPORTUNITY</span> Turkish brands (IPEK, DURU) hold <strong>15.7% volume but only 8% value</strong> — highly price-sensitive consumers. Lebanese brands (COSMAL CURE, SOFT WAVE) are distribution-heavy (34–48 WD) but value-diluted. Neither segment competes directly with Vatika's naturals positioning.
+  <span class="tag opp">OPPORTUNITY</span> Turkish brands (IPEK, DURU) hold <strong>15.7% volume but only 8% value</strong> — highly price-sensitive consumers. Lebanese brands (COSMAL CURE, SOFT WAVE) are distribution-heavy (34–48 WD) but value-diluted. Neither segment competes directly with Vatika's naturals positioning. Volume salience of cheap brands is high — Hobby (Turkey, 1L for IQD 3,000) undercuts at <strong>IQD 3/ml vs Vatika 8/ml</strong>. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
+</div>
+<div class="callout red" style="margin-top:8px">
+  <span class="tag risk">COUNTERFEIT &amp; PARALLEL RISK</span> Substantial counterfeit and look-alike presence including DHTP-type copies. Egypt WS constantly pushing lower-priced parallel stock into Iraq. <strong>Basra/South is the main gate</strong> for GCC parallel imports. Packaging change communication ongoing via POSM, but <strong>packaging needs a complete face-lift</strong> — TBR non-visibility is a concern with counterfeits &amp; local/Chinese brands now showcasing TBR. <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>
 </div>
 </div>
 </div>
@@ -261,11 +389,17 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
   <span class="tag risk">CRITICAL</span> <strong>Traditional Trade</strong> represents <strong>1,738 K LTs (37% of market)</strong> but Vatika has just <strong>1.2 WD</strong> (essentially absent). Closing to even 10 WD here — a fraction of SOFT WAVE's 19 — would open ~600 K LTs of addressable volume. <strong>Kurdistan</strong> (843 K LTs, WD 3.6) is the single largest geographic blind spot.
 </div>
 
-<!-- ═══════════ 7. DISTRIBUTION EFFICIENCY ═══════════ -->
-<div class="sh"><span class="num">7</span> Distribution Efficiency — Vatika vs Peers</div>
+<div class="callout blue">
+  <strong>Regional dynamics</strong> <em style="color:#6b7b8d;font-size:10px">(Market Visit)</em>: Iraq's 5 clusters have distinct trade structures. <strong>Kurdistan (28%)</strong> — Kurdish/Turkish culture, stable, 70% Modern Trade, no big WS markets. <strong>Baghdad (41%)</strong> — Arabic/Iraqi, high affordability, 60% WS, main wholesale markets. <strong>South/Basra (16%)</strong> — Irani/AP culture, main gate for GCC parallel imports, counterfeit risk. <strong>Holy Cities (10%)</strong> — Shi'aa religious, seasonal 40-day shutdowns, low affordability. <strong>West (5%)</strong> — low affordability, troubled infrastructure. KA channel gaining salience with govt support and new chains opening.
+</div>
 
+<!-- ═══════════ 7. DISTRIBUTION EFFICIENCY & SCENARIO MODELING ═══════════ -->
+<div class="sh"><span class="num">7</span> Distribution Efficiency &amp; Growth Scenario Modeling</div>
+
+<!-- 7A: Efficiency Benchmark Table -->
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:8px;font-weight:600">7A. DISTRIBUTION EFFICIENCY — VATIKA vs PEERS (TOTAL IRAQ)</p>
 <table class="tbl">
-<thead><tr><th>Brand</th><th>Val Share</th><th>WD</th><th>Efficiency (Val%÷WD)</th><th>Read</th></tr></thead>
+<thead><tr><th>Brand</th><th>Val%</th><th>WD</th><th>Efficiency</th><th>Read</th></tr></thead>
 <tbody>
 <tr><td>HEAD&amp;SHOULDERS</td><td>17.0%</td><td>53.1</td><td style="font-weight:700;color:#003d6b">32.1</td><td>Under-distributed — still room to grow</td></tr>
 <tr><td>CLEAR</td><td>5.9%</td><td>22.8</td><td style="font-weight:700">26.0</td><td>Strong pull per outlet</td></tr>
@@ -279,15 +413,279 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 </table>
 
 <div class="callout green">
-  <span class="tag opp">UPSIDE</span> Vatika's efficiency of <strong>13.0</strong> is top-quartile — every WD point gained yields disproportionate value. If Vatika matched COSMAL CURE's distribution (WD 33.7), at current efficiency, value share would reach <strong>~4.4%</strong> — a <strong>3.5x uplift</strong> from current 1.27%.
+  <span class="tag opp">UPSIDE</span> Vatika's efficiency of <strong>13.0</strong> is top-quartile — every WD point gained yields disproportionate value. This efficiency is the foundation of the scenario models below.
 </div>
 
-<!-- ═══════════ 8. PROMOTION ═══════════ -->
-<div class="sh"><span class="num">8</span> Promotion — A Gap to Close</div>
+<!-- 7B: Current State Heatmap by Region -->
+<p style="font-size:11px;color:#6b7b8d;margin:20px 0 8px;font-weight:600">7B. CURRENT STATE — VATIKA vs TOP 5 COMPETITORS BY REGION (WD)</p>
 
-<div class="callout red">
+<table class="sc-tbl">
+<thead><tr style="background:#f1f5f9"><th>Region</th><th>Mkt Val<br>Mn IQD</th><th style="color:#2e7d32">Vatika<br>WD</th><th>H&amp;S<br>WD</th><th>Garnier<br>WD</th><th>Cosmal<br>WD</th><th>Soft Wave<br>WD</th><th>Tresemme<br>WD</th><th style="color:#c0392b">Vatika<br>Val%</th><th>Vatika<br>Val Mn</th></tr></thead>
+<tbody>
+<tr class="current"><td><strong>Baghdad</strong></td><td>1,237</td><td style="color:#2e7d32;font-weight:700">22.4</td><td>16.4</td><td>59.4</td><td>51.3</td><td>14.5</td><td>56.6</td><td style="font-weight:700">6.4%</td><td>255</td></tr>
+<tr class="current"><td><strong>North</strong></td><td>663</td><td style="color:#2e7d32;font-weight:700">19.5</td><td>8.5</td><td>22.9</td><td>28.8</td><td>55.4</td><td>44.5</td><td style="font-weight:700">5.4%</td><td>76</td></tr>
+<tr class="current"><td><strong>Furat</strong></td><td>269</td><td style="color:#f39c12;font-weight:700">15.0</td><td>44.8</td><td>31.5</td><td>40.2</td><td>37.6</td><td>35.0</td><td style="font-weight:700">3.4%</td><td>19</td></tr>
+<tr class="current"><td><strong>South</strong></td><td>755</td><td style="color:#c0392b;font-weight:700">3.8</td><td>14.4</td><td>36.1</td><td>28.4</td><td>11.3</td><td>39.5</td><td style="font-weight:700">0.8%</td><td>16</td></tr>
+<tr class="current"><td><strong>Kurdistan</strong></td><td>1,069</td><td style="color:#c0392b;font-weight:700">0.0</td><td>9.4</td><td>26.6</td><td>19.6</td><td>43.8</td><td>19.9</td><td style="font-weight:700">0.0%</td><td>0</td></tr>
+<tr class="total"><td><strong>Total Iraq</strong></td><td><strong>4,749</strong></td><td><strong>9.8</strong></td><td><strong>53.1</strong></td><td><strong>39.3</strong></td><td><strong>33.7</strong></td><td><strong>48.4</strong></td><td><strong>42.6</strong></td><td><strong>1.3%</strong></td><td><strong>366</strong></td></tr>
+</tbody>
+</table>
+
+<!-- 7C: Current State by Channel -->
+<p style="font-size:11px;color:#6b7b8d;margin:16px 0 8px;font-weight:600">7C. CURRENT STATE — VATIKA vs TOP 5 COMPETITORS BY CHANNEL (WD)</p>
+
+<table class="sc-tbl">
+<thead><tr style="background:#f1f5f9"><th>Channel</th><th>Mkt Val<br>Mn IQD</th><th style="color:#2e7d32">Vatika<br>WD</th><th>H&amp;S<br>WD</th><th>Garnier<br>WD</th><th>Cosmal<br>WD</th><th>Soft Wave<br>WD</th><th>Tresemme<br>WD</th><th style="color:#c0392b">Vatika<br>Val%</th><th>Vatika<br>Val Mn</th></tr></thead>
+<tbody>
+<tr class="current"><td><strong>Perfumery</strong></td><td>514</td><td style="color:#2e7d32;font-weight:700">16.8</td><td>14.7</td><td>54.6</td><td>52.2</td><td>66.1</td><td>68.1</td><td style="font-weight:700">5.1%</td><td>276</td></tr>
+<tr class="current"><td><strong>Modern Trade</strong></td><td>690</td><td style="color:#f39c12;font-weight:700">5.5</td><td>19.0</td><td>51.0</td><td>41.8</td><td>70.0</td><td>42.9</td><td style="font-weight:700">1.1%</td><td>11</td></tr>
+<tr class="current"><td><strong>Trad. Trade</strong></td><td>2,843</td><td style="color:#c0392b;font-weight:700">1.2</td><td>1.1</td><td>18.4</td><td>10.6</td><td>19.1</td><td>10.8</td><td style="font-weight:700">1.9%</td><td>46</td></tr>
+<tr class="current"><td><strong>Pharmacy</strong></td><td>5</td><td style="color:#f39c12;font-weight:700">3.3</td><td>2.9</td><td>11.8</td><td>7.5</td><td>9.5</td><td>21.2</td><td style="font-weight:700">1.8%</td><td>4</td></tr>
+</tbody>
+</table>
+
+<!-- 7D: THREE GROWTH SCENARIOS -->
+<p style="font-size:11px;color:#6b7b8d;margin:24px 0 8px;font-weight:600">7D. THREE GROWTH SCENARIOS — WD TARGETS &amp; PROJECTED VALUE REALIZATION</p>
+
+<div class="scenario-hdr">
+  <div class="sc-card base">
+    <h4>Scenario A — Base Case</h4>
+    <div class="sv">WD 15</div>
+    <div class="sd">Organic growth, fill existing gaps<br>Timeline: 6–12 months</div>
+  </div>
+  <div class="sc-card push">
+    <h4>Scenario B — Distribution Push</h4>
+    <div class="sv">WD 25</div>
+    <div class="sd">Targeted expansion + Kurdistan entry<br>Timeline: 12–18 months</div>
+  </div>
+  <div class="sc-card full">
+    <h4>Scenario C — Full Potential</h4>
+    <div class="sv">WD 35</div>
+    <div class="sd">Match COSMAL CURE benchmark<br>Timeline: 18–24 months</div>
+  </div>
+</div>
+
+<!-- Regional Scenario Table -->
+<p style="font-size:11px;color:#6b7b8d;margin:16px 0 8px;font-weight:600">REGIONAL SCENARIO PROJECTIONS (Monthly Val, Mn IQD)</p>
+<p style="font-size:10px;color:#94a3b8;margin-bottom:8px">Model: Projected Val = Target WD × Current Efficiency (Val per WD point). Kurdistan uses North region efficiency as proxy. South uses 70% discount on efficiency for market-building phase.</p>
+
+<table class="sc-tbl">
+<thead><tr>
+<th style="border-color:#94a3b8">Region</th>
+<th style="border-color:#94a3b8">Mkt Val</th>
+<th style="border-color:#94a3b8">Current WD</th>
+<th style="border-color:#94a3b8">Current Val</th>
+<th style="border-color:#94a3b8">Eff.<br>(Val/WD)</th>
+<th style="border-color:#64748b;color:#475569">Sc A WD</th>
+<th style="border-color:#64748b;color:#475569">Sc A Val</th>
+<th style="border-color:#3b82f6;color:#1e40af">Sc B WD</th>
+<th style="border-color:#3b82f6;color:#1e40af">Sc B Val</th>
+<th style="border-color:#22c55e;color:#166534">Sc C WD</th>
+<th style="border-color:#22c55e;color:#166534">Sc C Val</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Baghdad</strong></td><td>1,237</td><td>22.4</td><td>255</td><td>11.4</td>
+<td class="s1">25</td><td class="s1">285</td>
+<td class="s2">32</td><td class="s2">365</td>
+<td class="s3">40</td><td class="s3">456</td>
+</tr>
+<tr>
+<td><strong>North</strong></td><td>663</td><td>19.5</td><td>76</td><td>3.9</td>
+<td class="s1">22</td><td class="s1">86</td>
+<td class="s2">28</td><td class="s2">109</td>
+<td class="s3">35</td><td class="s3">137</td>
+</tr>
+<tr>
+<td><strong>Furat</strong></td><td>269</td><td>15.0</td><td>19</td><td>1.3</td>
+<td class="s1">18</td><td class="s1">23</td>
+<td class="s2">25</td><td class="s2">32</td>
+<td class="s3">32</td><td class="s3">42</td>
+</tr>
+<tr style="background:#fff5f5">
+<td><strong>South</strong> <span style="color:#c0392b;font-size:9px">▲ GAP</span></td><td>755</td><td style="color:#c0392b;font-weight:700">3.8</td><td>16</td><td>4.1</td>
+<td class="s1">10</td><td class="s1"><strong>29</strong></td>
+<td class="s2">18</td><td class="s2"><strong>52</strong></td>
+<td class="s3">28</td><td class="s3"><strong>81</strong></td>
+</tr>
+<tr style="background:#fff5f5">
+<td><strong>Kurdistan</strong> <span style="color:#c0392b;font-size:9px">▲ NEW</span></td><td>1,069</td><td style="color:#c0392b;font-weight:700">0.0</td><td>0</td><td>—</td>
+<td class="s1">5</td><td class="s1"><strong>20</strong></td>
+<td class="s2">15</td><td class="s2"><strong>59</strong></td>
+<td class="s3">25</td><td class="s3"><strong>98</strong></td>
+</tr>
+<tr class="total">
+<td><strong>TOTAL</strong></td><td><strong>4,749</strong></td><td><strong>9.8</strong></td><td><strong>366</strong></td><td></td>
+<td></td><td><strong>443</strong></td>
+<td></td><td><strong>617</strong></td>
+<td></td><td><strong>814</strong></td>
+</tr>
+<tr style="background:#f0fdf4">
+<td colspan="4" style="text-align:right;font-weight:700;color:#166534">Incremental Monthly Value →</td><td></td>
+<td></td><td class="delta">+77</td>
+<td></td><td class="delta">+251</td>
+<td></td><td class="delta">+448</td>
+</tr>
+<tr style="background:#f0fdf4">
+<td colspan="4" style="text-align:right;font-weight:700;color:#166534">Annualised Incremental →</td><td></td>
+<td></td><td class="delta">+924 Mn</td>
+<td></td><td class="delta">+3,012 Mn</td>
+<td></td><td class="delta">+5,376 Mn</td>
+</tr>
+<tr style="background:#f0fdf4">
+<td colspan="4" style="text-align:right;font-weight:700;color:#166534">Projected Total Val Share →</td><td></td>
+<td></td><td style="font-weight:800;color:#1e40af">1.6%</td>
+<td></td><td style="font-weight:800;color:#1e40af">2.7%</td>
+<td></td><td style="font-weight:800;color:#1e40af">3.6%</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Channel Scenario Table -->
+<p style="font-size:11px;color:#6b7b8d;margin:20px 0 8px;font-weight:600">CHANNEL SCENARIO PROJECTIONS (Monthly Val, Mn IQD)</p>
+<p style="font-size:10px;color:#94a3b8;margin-bottom:8px">Model: Uses channel-specific efficiency ratios. Traditional Trade efficiency discounted 40% for market-building costs (lower initial pull vs Perfumery).</p>
+
+<table class="sc-tbl">
+<thead><tr>
+<th style="border-color:#94a3b8">Channel</th>
+<th style="border-color:#94a3b8">Mkt Val</th>
+<th style="border-color:#94a3b8">Current WD</th>
+<th style="border-color:#94a3b8">Current Val</th>
+<th style="border-color:#94a3b8">Eff.<br>(Val/WD)</th>
+<th style="border-color:#64748b;color:#475569">Sc A WD</th>
+<th style="border-color:#64748b;color:#475569">Sc A Val</th>
+<th style="border-color:#3b82f6;color:#1e40af">Sc B WD</th>
+<th style="border-color:#3b82f6;color:#1e40af">Sc B Val</th>
+<th style="border-color:#22c55e;color:#166534">Sc C WD</th>
+<th style="border-color:#22c55e;color:#166534">Sc C Val</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>Perfumery</strong></td><td>514</td><td>16.8</td><td>276</td><td>16.4</td>
+<td class="s1">22</td><td class="s1">361</td>
+<td class="s2">30</td><td class="s2">493</td>
+<td class="s3">40</td><td class="s3">657</td>
+</tr>
+<tr style="background:#fff5f5">
+<td><strong>Modern Trade</strong> <span style="color:#c0392b;font-size:9px">▲ GAP</span></td><td>690</td><td style="color:#c0392b;font-weight:700">5.5</td><td>11</td><td>2.0</td>
+<td class="s1">12</td><td class="s1"><strong>24</strong></td>
+<td class="s2">22</td><td class="s2"><strong>44</strong></td>
+<td class="s3">35</td><td class="s3"><strong>70</strong></td>
+</tr>
+<tr style="background:#fff5f5">
+<td><strong>Trad. Trade</strong> <span style="color:#c0392b;font-size:9px">▲ CRITICAL</span></td><td>2,843</td><td style="color:#c0392b;font-weight:700">1.2</td><td>46</td><td>38.2</td>
+<td class="s1">5</td><td class="s1"><strong>115</strong></td>
+<td class="s2">10</td><td class="s2"><strong>229</strong></td>
+<td class="s3">18</td><td class="s3"><strong>413</strong></td>
+</tr>
+<tr>
+<td><strong>Pharmacy</strong></td><td>5</td><td>3.3</td><td>4</td><td>1.1</td>
+<td class="s1">5</td><td class="s1">6</td>
+<td class="s2">8</td><td class="s2">9</td>
+<td class="s3">12</td><td class="s3">13</td>
+</tr>
+<tr class="total">
+<td><strong>TOTAL</strong></td><td><strong>4,052</strong></td><td></td><td><strong>337</strong></td><td></td>
+<td></td><td><strong>506</strong></td>
+<td></td><td><strong>775</strong></td>
+<td></td><td><strong>1,153</strong></td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout red" style="margin-top:4px">
+  <span class="tag risk">KEY INSIGHT</span> Traditional Trade is the <strong>single largest value unlock</strong>. At just WD 10 (Scenario B), it generates <strong>229 Mn IQD/month</strong> — more than Modern Trade at WD 22. This is because TT holds 60% of market value (2,843 Mn) and Vatika's current TT efficiency is abnormally high (38.2) due to the tiny WD base. Even at 40% efficiency discount for scaling, each WD point in TT is worth <strong>~23 Mn IQD/month</strong>.
+</div>
+
+<!-- 7E: Competitor Benchmark — What WD gets you -->
+<p style="font-size:11px;color:#6b7b8d;margin:24px 0 8px;font-weight:600">7E. COMPETITOR BENCHMARK — VALUE REALIZATION AT DIFFERENT WD LEVELS</p>
+<p style="font-size:10px;color:#94a3b8;margin-bottom:8px">What comparable brands actually achieve at different distribution levels — real data, not projections.</p>
+
+<table class="sc-tbl">
+<thead><tr style="background:#f1f5f9"><th>Brand</th><th>WD</th><th>Val%</th><th>Monthly Val<br>Mn IQD</th><th>Ann. Val<br>Bn IQD</th><th>Ann. Val<br>Mn AED</th><th>Efficiency</th><th>What this means for Vatika</th></tr></thead>
+<tbody>
+<tr><td><span class="ob mnc">MNC</span> TRESEMME</td><td>42.6</td><td>3.7%</td><td>176</td><td>2.1</td><td>5.3</td><td>8.7</td><td style="font-size:10px">Floor case — Vatika at WD 43 would do <em>better</em> (higher efficiency)</td></tr>
+<tr><td><span class="ob mnc">MNC</span> GARNIER</td><td>39.3</td><td>6.2%</td><td>295</td><td>3.5</td><td>8.9</td><td>15.8</td><td style="font-size:10px">Realistic ceiling — strong brand + strong distribution</td></tr>
+<tr><td><span class="ob lebanese">Lebanese</span> COSMAL CURE</td><td>33.7</td><td>4.0%</td><td>190</td><td>2.3</td><td>5.7</td><td>11.8</td><td style="font-size:10px">Best proxy — similar to Scenario C target WD 35</td></tr>
+<tr><td><span class="ob lebanese">Lebanese</span> SOFT WAVE</td><td>48.4</td><td>3.7%</td><td>176</td><td>2.1</td><td>5.3</td><td>7.6</td><td style="font-size:10px">Distribution champ, but returns diminishing at WD 48</td></tr>
+<tr class="vt"><td><span class="ob indian">Indian</span> <strong>VATIKA today</strong></td><td><strong>9.8</strong></td><td><strong>1.3%</strong></td><td><strong>62</strong></td><td><strong>0.7</strong></td><td><strong>1.9</strong></td><td style="color:#2e7d32"><strong>13.0</strong></td><td style="font-size:10px"><strong>Efficiency &gt; COSMAL CURE at 1/3rd the distribution</strong></td></tr>
+<tr style="background:#eff6ff"><td><span class="ob indian">Indian</span> <strong>Vatika @ Sc B</strong></td><td><strong>25</strong></td><td><strong>~2.7%</strong></td><td><strong>~128</strong></td><td><strong>1.5</strong></td><td><strong>3.8</strong></td><td style="color:#1e40af"><strong>~10.8</strong></td><td style="font-size:10px"><strong>Doubles revenue — still efficient, huge room left</strong></td></tr>
+<tr style="background:#f0fdf4"><td><span class="ob indian">Indian</span> <strong>Vatika @ Sc C</strong></td><td><strong>35</strong></td><td><strong>~3.6%</strong></td><td><strong>~171</strong></td><td><strong>2.1</strong></td><td><strong>5.1</strong></td><td style="color:#166534"><strong>~10.3</strong></td><td style="font-size:10px"><strong>Matches COSMAL CURE val — still above their efficiency</strong></td></tr>
+</tbody>
+</table>
+
+<!-- 7F: Visual summary bars -->
+<p style="font-size:11px;color:#6b7b8d;margin:24px 0 8px;font-weight:600">7F. SCENARIO SUMMARY — ANNUALISED VALUE TRAJECTORY (Mn AED)</p>
+
+<div style="display:grid;grid-template-columns:120px 1fr 80px;gap:4px 12px;align-items:center;margin:8px 0 16px">
+
+<div style="font-size:11px;font-weight:700;color:#475569">Current</div>
+<div class="bar-wrap"><div class="bar-fill cur" style="width:11%">1.9 Mn AED</div></div>
+<div style="font-size:11px;color:#64748b">WD 9.8</div>
+
+<div style="font-size:11px;font-weight:700;color:#475569">Sc A (6–12m)</div>
+<div class="bar-wrap"><div class="bar-fill s1" style="width:17%">2.8 Mn AED</div></div>
+<div style="font-size:11px;color:#64748b">WD ~15</div>
+
+<div style="font-size:11px;font-weight:700;color:#1e40af">Sc B (12–18m)</div>
+<div class="bar-wrap"><div class="bar-fill s2" style="width:36%">5.7 Mn AED</div></div>
+<div style="font-size:11px;color:#1e40af">WD ~25</div>
+
+<div style="font-size:11px;font-weight:700;color:#166534">Sc C (18–24m)</div>
+<div class="bar-wrap"><div class="bar-fill s3" style="width:54%">8.6 Mn AED</div></div>
+<div style="font-size:11px;color:#166534">WD ~35</div>
+
+<div style="font-size:11px;font-weight:600;color:#94a3b8">GARNIER (ref)</div>
+<div class="bar-wrap"><div class="bar-fill" style="width:56%;background:#f39c12">8.9 Mn AED</div></div>
+<div style="font-size:11px;color:#94a3b8">WD 39.3</div>
+
+<div style="font-size:11px;font-weight:600;color:#94a3b8">H&amp;S (ref)</div>
+<div class="bar-wrap"><div class="bar-fill" style="width:100%;background:#003d6b">15.8 Mn AED</div></div>
+<div style="font-size:11px;color:#94a3b8">WD 53.1</div>
+
+</div>
+
+<div class="callout green">
+  <span class="tag opp">BOTTOM LINE</span> Moving from current WD 9.8 to <strong>Scenario B (WD 25)</strong> would <strong>triple Vatika's Iraq revenue</strong> from ~1.9 to ~5.7 Mn AED annualised. <strong>Scenario C (WD 35)</strong> takes it to ~8.6 Mn AED — approaching GARNIER's level (8.9 Mn AED) at a <strong>lower WD</strong>, because Vatika's efficiency remains higher. The biggest value pools to unlock: <strong>Traditional Trade (+2.7 Bn IQD/yr)</strong>, <strong>Kurdistan (+0.7 Bn IQD/yr)</strong>, and <strong>South (+0.8 Bn IQD/yr)</strong>.
+</div>
+
+<!-- ═══════════ 8. EXECUTION GAPS ═══════════ -->
+<div class="sh"><span class="num">8</span> Execution Gaps — Promotion, Portfolio &amp; Channel</div>
+
+<div class="callout red" style="margin-bottom:14px">
   <span class="tag risk">ALERT</span> Vatika currently has <strong>ZERO promotional activity</strong> in Iraq. The market leader TRICHUP (Indian) runs 74% of its volume through promotions. Even P&amp;G (HEAD&amp;SHOULDERS, PANTENE) activates tactical promos at 0.5–1.6%. Vatika needs baseline promotional presence to drive trial in new distribution outlets.
 </div>
+
+<p style="font-size:11px;color:#6b7b8d;margin-bottom:6px;font-weight:600">SHAMPOO SITUATION ASSESSMENT <em style="font-weight:400;color:#94a3b8">(Market Visit)</em></p>
+<table class="sit-tbl">
+<thead><tr><th style="width:13%">Factor</th><th style="width:30%">Status</th><th style="width:28%">Challenge / Opportunity</th><th style="width:29%">Action Suggested</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Portfolio</strong></td>
+  <td>Higher clutter vs GCC. Garnier leads regular shampoos on value. H&amp;S equally big due to AD segment. 400ml, 600ml, 1L salient sizes. Conditioners sell on shampoo equity.</td>
+  <td>Dabur present in Herbal category only (Vatika + Amla). AD segment limited to single SKU. No clear value/benefit/premium positioning. Oil Shampoo lacking call-out.</td>
+  <td>AD segment needs strengthening. Consumer research for brand positioning. Explore alternate manufacturing options to improve pricing.</td>
+</tr>
+<tr>
+  <td><strong>Channel</strong></td>
+  <td>KA salience low vs category. Competition heavy on in-store media year-round. Full block shelf rentals the norm in top KA stores.</td>
+  <td>KA channel gaining with govt support &amp; new chains. L'Oréal most dominant on shelf; P&amp;G also strong SOS.</td>
+  <td>Complete face lift on KA investment and messaging. Still much under-indexed vs top players.</td>
+</tr>
+<tr>
+  <td><strong>Pricing</strong></td>
+  <td>Base range at 87% vs Pantene. AD shampoo at premium to H&amp;S. WS margin gap wider than competitors.</td>
+  <td>Exchange rate pressure. AD price 19% above H&amp;S unsustainable.</td>
+  <td>Immediate AD pricing correction. Base range correction also needed due to exchange rate.</td>
+</tr>
+<tr>
+  <td><strong>Parallel</strong></td>
+  <td>Egypt WS pushing lower-priced stock into Iraq via Basra. Counterfeits across categories including DHTP look-alikes.</td>
+  <td>TBR non-visibility a concern. Packaging change communication ongoing via POSM.</td>
+  <td>Packaging needs complete face-lift. Strengthen anti-counterfeit tracking.</td>
+</tr>
+</tbody>
+</table>
 
 <!-- ═══════════ 9. STRATEGIC RECOMMENDATIONS ═══════════ -->
 <div class="sh"><span class="num">9</span> Strategic Recommendations</div>
@@ -318,10 +716,15 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
     <p>South (1,094 K LTs — 23% of market) has Vatika WD of only 8.3 vs 22.4 Baghdad. This is the <strong>second-largest region</strong> with clear headroom. Prioritise distributor expansion alongside Baghdad playbook.</p>
     <div class="impact">Impact: +0.5% value share from distribution parity</div>
   </div>
+  <div class="rec-card" style="border-top-color:#e74c3c">
+    <h4>6. Fix AD Pricing &amp; In-Store Visibility</h4>
+    <p><strong>Market visit confirmed:</strong> Vatika AD at IQD 4,750 is <strong>19% above H&amp;S</strong> — unsustainable. Immediate pricing correction to close the gap. Simultaneously invest in <strong>branded shelf fixtures &amp; in-store media</strong> in top 100 KA stores — competition (L'Oréal, P&amp;G, Unilever) owns all visibility assets today.</p>
+    <div class="impact">Impact: Arrest -8.6% YTD Vatika decline + build brand saliency</div>
+  </div>
 </div>
 
 <div class="callout green" style="margin-top:20px">
-  <strong>Bottom line:</strong> Vatika's brand pull is strong (efficiency 13.0) and pricing is well-positioned in Mainstream. The <strong>single biggest lever is distribution expansion</strong> — particularly Traditional Trade (nearly absent) and Kurdistan (3.6 WD). Executing recommendations 1–3 alone could take Vatika from <strong>1.3% → 3%+ value share</strong> within 12–18 months, translating to an incremental <strong>~6 Bn IQD</strong> in annual revenue.
+  <strong>Bottom line:</strong> Retail audit data + market visit intelligence paint a consistent picture. Vatika's brand pull is strong (efficiency 13.0) and base pricing is competitive in Mainstream. However, <strong>three urgent fixes</strong> emerge: (1) <strong>Distribution expansion</strong> — Traditional Trade and Kurdistan are virtually unserved; (2) <strong>AD pricing correction</strong> — Vatika AD is priced 19% above H&amp;S, the segment leader; (3) <strong>In-store visibility</strong> — zero branded assets vs competitors who own entire shelf bays. Executing recommendations 1–3 could take Vatika from <strong>1.3% → 3%+ value share</strong>; adding pricing correction (#6) is essential to arrest the <strong>-8.6% YTD decline</strong>. Total incremental opportunity: <strong>~6–8 Bn IQD</strong> in annual revenue.
 </div>
 
 <!-- ═══════════ FOOTNOTES & GLOSSARY ═══════════ -->
@@ -361,6 +764,9 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 <div class="fn"><span class="ft">[17]</span><span><strong>Source</strong> — RetailZoom Retail Audit Dipstick, Jan–Feb 2026. Monthly panel-based measurement across ~3,000 retail outlets in Iraq covering Perfumery, Modern Trade, Traditional Trade, and Pharmacy channels.</span></div>
 <div class="fn"><span class="ft">[18]</span><span><strong>Annualised figures</strong> — Monthly data × 12. Used for full-year strategic planning. Actual annual figures may vary due to seasonality and Ramadan effects.</span></div>
 <div class="fn"><span class="ft">[19]</span><span><strong>IQD/AED conversion</strong> — 1 AED = 400 IQD used throughout. All AED figures are derived from IQD at this rate.</span></div>
+<div class="fn"><span class="ft">[20]</span><span><strong>Market Visit</strong> — Field observations from Iraq Market Visit Debrief (18–20 Nov 2025). Includes store checks, distributor meetings, pricing audits, and shelf execution assessments across KA and WS channels. Source: Al-Maha Group / Dabur field team.</span></div>
+<div class="fn"><span class="ft">[21]</span><span><strong>Trade Construct</strong> — Estimated channel split: WS + Sub-Distributor vs Rest (KA, direct retail). Vatika at 57/43 vs category average 70/30 indicates under-developed WS pull.</span></div>
+<div class="fn"><span class="ft">[22]</span><span><strong>Price Index</strong> — Indexed to Dabur (=100). Values &gt;100 indicate brand is more expensive than Dabur on a per-ml basis; &lt;100 indicates cheaper. Field-collected shelf prices, Nov 2025.</span></div>
 </div>
 
 </div>
@@ -369,8 +775,8 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f
 </div><!-- /body -->
 
 <div class="ftr">
-  Source: RetailZoom Retail Audit Dipstick (Jan26/Feb26) &bull; Iraq Shampoo Market &bull; Confidential — For internal Dabur use only<br>
-  Prepared: 21 April 2026
+  Sources: RetailZoom Retail Audit Dipstick (Jan26/Feb26) + Iraq Market Visit Debrief (Nov 2025) &bull; Confidential — For internal Dabur use only<br>
+  Prepared: 21 April 2026 &bull; Updated: 4 May 2026
 </div>
 
 </div><!-- /page -->
